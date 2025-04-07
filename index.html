@@ -4,207 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MountainResine - Shilajit Premium de l'Himalaya</title>
-    <meta name="description" content="Découvrez notre Shilajit premium, une résine naturelle de l'Himalaya riche en minéraux et oligo-éléments. Bienfaits, qualité et pureté garantis.">
+    <meta name="description" content="Découvrez le shilajit pur et authentique de MountainResine, résine fossile naturelle riche en minéraux et oligo-éléments essentiels.">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css">
     <style>
-        /* Personnalisation des couleurs */
-        :root {
-            --primary: #3a6351;
-            --secondary: #f2c94c;
-            --dark: #1e272e;
-            --light: #f5f5f5;
-        }
-        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark);
-            background-color: #fcfcfc;
+            color: #333;
+            line-height: 1.6;
         }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.375rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
         }
-        
-        .btn-primary:hover {
-            background-color: #2c4d3e;
-            transform: translateY(-2px);
+        .benefit-card {
+            transition: transform 0.3s ease;
         }
-        
-        .btn-secondary {
-            background-color: var(--secondary);
-            color: var(--dark);
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.375rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-secondary:hover {
-            background-color: #e6b325;
-            transform: translateY(-2px);
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary);
-            bottom: -10px;
-            left: 0;
-        }
-        
-        .text-center .section-title::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .feature-card {
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover {
+        .benefit-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        
         .product-card {
-            transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-        
-        .testimonial-card {
-            transition: all 0.3s ease;
+        .payment-icons img {
+            height: 30px;
+            margin: 0 10px;
         }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-        }
-        
-        /* Styles spécifiques au header */
-        .header-shadow {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-        
-        /* Style pour la FAQ */
-        .faq-item {
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-        
-        .faq-question {
-            cursor: pointer;
-            position: relative;
-            padding-right: 30px;
-        }
-        
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
         }
-        
         .faq-item.active .faq-answer {
             max-height: 500px;
         }
-        
-        /* Style pour les badges de paiement */
-        .payment-badge {
-            height: 30px;
-            margin: 0 8px;
-            filter: grayscale(20%);
-            transition: all 0.3s ease;
-        }
-        
-        .payment-badge:hover {
-            filter: grayscale(0%);
-            transform: translateY(-2px);
-        }
     </style>
 </head>
-<body>
-    <!-- Header -->
-    <header class="bg-white header-shadow sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4">
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <a href="#" class="text-2xl font-bold text-primary flex items-center">
-                        <span class="text-3xl mr-2" style="color: var(--primary);">
-                            <i class="fas fa-mountain"></i>
-                        </span>
-                        <span style="color: var(--primary);">Mountain<span style="color: var(--secondary);">Resine</span></span>
-                    </a>
+                <a href="#" class="text-2xl font-bold text-green-800">MountainResine</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="text-gray-700 hover:text-green-800">Accueil</a>
+                    <a href="#products" class="text-gray-700 hover:text-green-800">Produits</a>
+                    <a href="#about" class="text-gray-700 hover:text-green-800">À propos</a>
+                    <a href="#benefits" class="text-gray-700 hover:text-green-800">Bienfaits</a>
+                    <a href="#faq" class="text-gray-700 hover:text-green-800">FAQ</a>
+                    <a href="#contact" class="text-gray-700 hover:text-green-800">Contact</a>
                 </div>
-                
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#products" class="text-gray-700 hover:text-primary transition duration-300">Produits</a>
-                    <a href="#benefits" class="text-gray-700 hover:text-primary transition duration-300">Bienfaits</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary transition duration-300">À propos</a>
-                    <a href="#blog" class="text-gray-700 hover:text-primary transition duration-300">Blog</a>
-                    <a href="#faq" class="text-gray-700 hover:text-primary transition duration-300">FAQ</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary transition duration-300">Contact</a>
-                </nav>
-                
                 <div class="flex items-center">
-                    <button class="snipcart-checkout flex items-center space-x-2 text-gray-700 hover:text-primary transition duration-300">
-                        <span class="text-xl"><i class="fas fa-shopping-cart"></i></span>
-                        <span class="snipcart-items-count">0</span>
-                    </button>
-                    
-                    <button class="ml-4 md:hidden text-gray-700 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <button class="snipcart-checkout flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
+                        <span class="ml-2 snipcart-items-count text-gray-700"></span>
+                        <span class="ml-1 snipcart-total-price text-gray-700"></span>
                     </button>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6" style="color: var(--primary);">Découvrez l'or noir de l'Himalaya</h1>
-                    <p class="text-xl mb-8 text-gray-700">Shilajit 100% pur et naturel - La résine fossile aux bienfaits millénaires reconnue par la médecine ayurvédique</p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="#products" class="btn-primary flex items-center justify-center">
-                            <span>Découvrir nos produits</span>
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                        <a href="#benefits" class="btn-secondary flex items-center justify-center">
-                            <span>Bienfaits du Shilajit</span>
-                            <i class="fas fa-leaf ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Montagnes de l'Himalaya" class="rounded-lg shadow-xl w-full">
-                </div>
+    <section class="hero-section flex items-center">
+        <div class="container mx-auto px-4 text-center">
+            <div class="bg-white bg-opacity-90 p-8 rounded-lg max-w-2xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold text-green-800 mb-4">Découvrez l'or noir de l'Himalaya</h1>
+                <p class="text-xl mb-6">Shilajit 100% pur et naturel - La résine fossile aux bienfaits millénaires</p>
+                <a href="#products" class="bg-green-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-800 transition">Découvrir nos produits</a>
             </div>
         </div>
     </section>
@@ -212,123 +87,105 @@
     <!-- About Shilajit Section -->
     <section id="about" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title text-3xl md:text-4xl mx-auto">Qu'est-ce que le Shilajit ?</h2>
-                <p class="mt-6 text-gray-600 max-w-3xl mx-auto">Une résine millénaire naturelle avec plus de 84 minéraux et oligo-éléments essentiels</p>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">Qu'est-ce que le Shilajit ?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Une résine millénaire naturelle avec plus de 84 minéraux et oligo-éléments essentiels</p>
             </div>
             
-            <div class="flex flex-col md:flex-row items-center">
+            <div class="flex flex-col md:flex-row items-center max-w-5xl mx-auto">
                 <div class="md:w-1/2 mb-8 md:mb-0">
-                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shilajit brut" class="rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1567438213255-238432616912?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Montagne de l'Himalaya" class="rounded-lg shadow-lg">
                 </div>
                 <div class="md:w-1/2 md:pl-12">
-                    <h3 class="text-2xl font-bold mb-6" style="color: var(--primary);">L'or des montagnes</h3>
-                    <p class="text-gray-700 mb-6">Le Shilajit est une résine fossile qui suinte des roches de l'Himalaya pendant les mois chauds. Cette substance naturelle se forme sur des millions d'années à partir de la décomposition de plantes et contient une concentration exceptionnelle de fulviques et d'acides humiques.</p>
-                    <p class="text-gray-700 mb-8">Utilisé depuis des millénaires dans la médecine ayurvédique, le Shilajit est considéré comme un "rasayana" - un régénérateur complet du corps, de l'esprit et de l'âme.</p>
+                    <h3 class="text-2xl font-bold text-green-800 mb-4">L'or des montagnes</h3>
+                    <p class="mb-4">Le Shilajit est une résine fossile qui suinte des roches de l'Himalaya pendant les mois chauds. Cette substance naturelle se forme sur des millions d'années à partir de la décomposition de plantes et contient une concentration exceptionnelle de fulviques et d'acides humiques.</p>
+                    <p class="mb-6">Utilisé depuis des millénaires dans la médecine ayurvédique, le Shilajit est considéré comme un "rasayana" - un régénérateur complet du corps, de l'esprit et de l'âme.</p>
                     
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="flex items-center">
-                            <span class="mr-3 text-green-500"><i class="fas fa-check-circle"></i></span>
-                            <span>100% Naturel</span>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-green-50 p-4 rounded-lg text-center">
+                            <p class="font-semibold text-green-800">100% Naturel</p>
                         </div>
-                        <div class="flex items-center">
-                            <span class="mr-3 text-green-500"><i class="fas fa-check-circle"></i></span>
-                            <span>Non raffiné</span>
+                        <div class="bg-green-50 p-4 rounded-lg text-center">
+                            <p class="font-semibold text-green-800">Non raffiné</p>
                         </div>
-                        <div class="flex items-center">
-                            <span class="mr-3 text-green-500"><i class="fas fa-check-circle"></i></span>
-                            <span>Récolté à la main</span>
+                        <div class="bg-green-50 p-4 rounded-lg text-center">
+                            <p class="font-semibold text-green-800">Récolté à la main</p>
                         </div>
-                        <div class="flex items-center">
-                            <span class="mr-3 text-green-500"><i class="fas fa-check-circle"></i></span>
-                            <span>Purifié traditionnellement</span>
+                        <div class="bg-green-50 p-4 rounded-lg text-center">
+                            <p class="font-semibold text-green-800">Purifié traditionnellement</p>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 mt-16">
-                <div class="bg-gray-50 p-6 rounded-lg feature-card">
-                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-green-100 mb-6">
-                        <i class="fas fa-mountain text-xl" style="color: var(--primary);"></i>
-                    </div>
-                    <h4 class="text-xl font-semibold mb-4">Origine Himalayenne</h4>
-                    <p class="text-gray-600">Notre Shilajit provient exclusivement des hautes altitudes de l'Himalaya, là où la résine est la plus pure et la plus riche en nutriments.</p>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg feature-card">
-                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-green-100 mb-6">
-                        <i class="fas fa-mortar-pestle text-xl" style="color: var(--primary);"></i>
-                    </div>
-                    <h4 class="text-xl font-semibold mb-4">Purification Traditionnelle</h4>
-                    <p class="text-gray-600">Nous utilisons des méthodes ancestrales de purification pour préserver tous les composés actifs naturels du Shilajit.</p>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg feature-card">
-                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-green-100 mb-6">
-                        <i class="fas fa-award text-xl" style="color: var(--primary);"></i>
-                    </div>
-                    <h4 class="text-xl font-semibold mb-4">Qualité Certifiée</h4>
-                    <p class="text-gray-600">Chaque lot est testé en laboratoire pour garantir sa pureté, sa teneur en fulviques et l'absence de contaminants.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Benefits Section -->
-    <section id="benefits" class="py-16 bg-gray-50">
+    <section id="benefits" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title text-3xl md:text-4xl mx-auto">Les bienfaits du Shilajit</h2>
-                <p class="mt-6 text-gray-600 max-w-3xl mx-auto">Découvrez pourquoi le Shilajit est considéré comme un super-aliment par la médecine traditionnelle</p>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">Les bienfaits du Shilajit</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Découvrez pourquoi le Shilajit est considéré comme un super-aliment par la médecine traditionnelle</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
-                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-100 mb-6">
-                        <i class="fas fa-bolt text-xl" style="color: var(--secondary);"></i>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md benefit-card">
+                    <div class="text-green-700 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
                     </div>
-                    <h4 class="text-xl font-semibold mb-4">Boost d'énergie</h4>
+                    <h3 class="text-xl font-bold text-green-800 mb-2">Boost d'énergie</h3>
                     <p class="text-gray-600">Le Shilajit améliore le métabolisme cellulaire et aide à augmenter les niveaux d'énergie naturellement, sans stimulants.</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
-                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-100 mb-6">
-                        <i class="fas fa-brain text-xl" style="color: var(--secondary);"></i>
+                <div class="bg-white p-6 rounded-lg shadow-md benefit-card">
+                    <div class="text-green-700 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
                     </div>
-                    <h4 class="text-xl font-semibold mb-4">Fonction cognitive</h4>
+                    <h3 class="text-xl font-bold text-green-800 mb-2">Fonction cognitive</h3>
                     <p class="text-gray-600">Riche en fulviques, il aide à protéger le cerveau du stress oxydatif et favorise une meilleure clarté mentale.</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
-                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-100 mb-6">
-                        <i class="fas fa-heartbeat text-xl" style="color: var(--secondary);"></i>
+                <div class="bg-white p-6 rounded-lg shadow-md benefit-card">
+                    <div class="text-green-700 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
                     </div>
-                    <h4 class="text-xl font-semibold mb-4">Santé cardiaque</h4>
+                    <h3 class="text-xl font-bold text-green-800 mb-2">Santé cardiaque</h3>
                     <p class="text-gray-600">Contribue au maintien d'une fonction cardiovasculaire saine grâce à ses propriétés antioxydantes.</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
-                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-100 mb-6">
-                        <i class="fas fa-shield-alt text-xl" style="color: var(--secondary);"></i>
+                <div class="bg-white p-6 rounded-lg shadow-md benefit-card">
+                    <div class="text-green-700 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
                     </div>
-                    <h4 class="text-xl font-semibold mb-4">Système immunitaire</h4>
+                    <h3 class="text-xl font-bold text-green-800 mb-2">Système immunitaire</h3>
                     <p class="text-gray-600">Ses minéraux et oligo-éléments aident à renforcer les défenses naturelles de l'organisme.</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
-                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-100 mb-6">
-                        <i class="fas fa-running text-xl" style="color: var(--secondary);"></i>
+                <div class="bg-white p-6 rounded-lg shadow-md benefit-card">
+                    <div class="text-green-700 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                     </div>
-                    <h4 class="text-xl font-semibold mb-4">Performance sportive</h4>
+                    <h3 class="text-xl font-bold text-green-800 mb-2">Performance sportive</h3>
                     <p class="text-gray-600">Améliore la récupération musculaire et l'endurance, populaire chez les athlètes et sportifs.</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
-                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-100 mb-6">
-                        <i class="fas fa-balance-scale text-xl" style="color: var(--secondary);"></i>
+                <div class="bg-white p-6 rounded-lg shadow-md benefit-card">
+                    <div class="text-green-700 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
                     </div>
-                    <h4 class="text-xl font-semibold mb-4">Équilibre hormonal</h4>
+                    <h3 class="text-xl font-bold text-green-800 mb-2">Équilibre hormonal</h3>
                     <p class="text-gray-600">Aide à maintenir des niveaux hormonaux équilibrés pour les hommes et les femmes.</p>
                 </div>
             </div>
@@ -336,26 +193,26 @@
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="py-16 bg-white">
+    <section id="products" class="py-16">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title text-3xl md:text-4xl mx-auto">Nos produits premium</h2>
-                <p class="mt-6 text-gray-600 max-w-3xl mx-auto">Une gamme de Shilajit de la plus haute qualité pour répondre à tous vos besoins</p>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">Nos produits premium</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Une gamme de Shilajit de la plus haute qualité pour répondre à tous vos besoins</p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Product 1 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shilajit Premium 30g" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 left-4 bg-yellow-400 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full">Bestseller</div>
-                    </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shilajit Premium 30g" class="w-full h-64 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2" style="color: var(--primary);">Shilajit Premium 30g</h3>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-green-800">Shilajit Premium 30g</h3>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">Bestseller</span>
+                        </div>
                         <p class="text-gray-600 mb-4">Résine pure d'Himalaya, récoltée à la main et purifiée traditionnellement.</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold" style="color: var(--primary);">39,90 €</span>
-                            <button class="snipcart-add-item btn-primary text-sm px-4 py-2"
+                            <span class="text-2xl font-bold text-green-800">39,90 €</span>
+                            <button class="snipcart-add-item bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition"
                                 data-item-id="shilajit-premium-30g"
                                 data-item-name="Shilajit Premium 30g"
                                 data-item-price="39.90"
@@ -365,21 +222,24 @@
                                 Ajouter au panier
                             </button>
                         </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <p>Plusieurs options de paiement disponibles : carte bancaire, PayPal, Google Pay</p>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Product 2 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shilajit Premium 60g" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 left-4 bg-green-500 text-white text-sm font-semibold px-3 py-1 rounded-full">Économique</div>
-                    </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shilajit Premium 60g" class="w-full h-64 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2" style="color: var(--primary);">Shilajit Premium 60g</h3>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-green-800">Shilajit Premium 60g</h3>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">Économique</span>
+                        </div>
                         <p class="text-gray-600 mb-4">Format familial de notre résine pure d'Himalaya, pour une cure complète.</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold" style="color: var(--primary);">69,90 €</span>
-                            <button class="snipcart-add-item btn-primary text-sm px-4 py-2"
+                            <span class="text-2xl font-bold text-green-800">69,90 €</span>
+                            <button class="snipcart-add-item bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition"
                                 data-item-id="shilajit-premium-60g"
                                 data-item-name="Shilajit Premium 60g"
                                 data-item-price="69.90"
@@ -389,21 +249,24 @@
                                 Ajouter au panier
                             </button>
                         </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <p>Plusieurs options de paiement disponibles : carte bancaire, PayPal, Google Pay</p>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Product 3 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Pack Découverte Shilajit" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 left-4 bg-blue-500 text-white text-sm font-semibold px-3 py-1 rounded-full">Pack Découverte</div>
-                    </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Pack Découverte Shilajit" class="w-full h-64 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2" style="color: var(--primary);">Pack Découverte Shilajit</h3>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-green-800">Pack Découverte</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Idéal débutant</span>
+                        </div>
                         <p class="text-gray-600 mb-4">15g de Shilajit premium + guide d'utilisation + cuillère doseuse en bois.</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold" style="color: var(--primary);">24,90 €</span>
-                            <button class="snipcart-add-item btn-primary text-sm px-4 py-2"
+                            <span class="text-2xl font-bold text-green-800">24,90 €</span>
+                            <button class="snipcart-add-item bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition"
                                 data-item-id="pack-decouverte-shilajit"
                                 data-item-name="Pack Découverte Shilajit"
                                 data-item-price="24.90"
@@ -413,74 +276,79 @@
                                 Ajouter au panier
                             </button>
                         </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <p>Plusieurs options de paiement disponibles : carte bancaire, PayPal, Google Pay</p>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Product 4 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shilajit Gold 30g" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 left-4 bg-purple-500 text-white text-sm font-semibold px-3 py-1 rounded-full">Premium</div>
-                    </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shilajit Gold 30g" class="w-full h-64 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2" style="color: var(--primary);">Shilajit Gold 30g</h3>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-green-800">Shilajit Gold 30g</h3>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Premium</span>
+                        </div>
                         <p class="text-gray-600 mb-4">Notre meilleure qualité, avec une concentration supérieure en acides fulviques.</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold" style="color: var(--primary);">49,90 €</span>
-                            <button class="snipcart-add-item btn-primary text-sm px-4 py-2"
+                            <span class="text-2xl font-bold text-green-800">59,90 €</span>
+                            <button class="snipcart-add-item bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition"
                                 data-item-id="shilajit-gold-30g"
                                 data-item-name="Shilajit Gold 30g"
-                                data-item-price="49.90"
+                                data-item-price="59.90"
                                 data-item-description="Notre meilleure qualité, avec une concentration supérieure en acides fulviques."
                                 data-item-image="https://images.unsplash.com/photo-1587854692152-cbe660dbde88"
                                 data-item-url="https://mountainresine.netlify.app/">
                                 Ajouter au panier
                             </button>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Product 5 -->
-                <div class="product-card bg-white rounded-lg overflow-hidden">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Abonnement Shilajit 30g" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 left-4 bg-red-500 text-white text-sm font-semibold px-3 py-1 rounded-full">Abonnement</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2" style="color: var(--primary);">Abonnement Shilajit 30g</h3>
-                        <p class="text-gray-600 mb-4">Shilajit Premium 30g livré chaque mois. Annulable à tout moment.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold" style="color: var(--primary);">35,90 €/mois</span>
-                            <button class="snipcart-add-item btn-primary text-sm px-4 py-2"
-                                data-item-id="abonnement-shilajit-30g"
-                                data-item-name="Abonnement Shilajit 30g"
-                                data-item-price="35.90"
-                                data-item-description="Shilajit Premium 30g livré chaque mois. Annulable à tout moment."
-                                data-item-image="https://images.unsplash.com/photo-1587854692152-cbe660dbde88"
-                                data-item-url="https://mountainresine.netlify.app/"
-                                data-item-has-taxes-included="true"
-                                data-item-weight="100"
-                                data-item-max-quantity="5">
-                                S'abonner
-                            </button>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <p>Plusieurs options de paiement disponibles : carte bancaire, PayPal, Google Pay</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Product 6 - B2B -->
-                <div class="product-card bg-white rounded-lg overflow-hidden">
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shilajit B2B" class="w-full h-64 object-cover">
-                        <div class="absolute top-4 left-4 bg-gray-700 text-white text-sm font-semibold px-3 py-1 rounded-full">B2B</div>
-                    </div>
+                <!-- Product 5 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Abonnement Shilajit 30g" class="w-full h-64 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2" style="color: var(--primary);">Offre Professionnelle</h3>
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-green-800">Abonnement Mensuel</h3>
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">Économisez 15%</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Shilajit Premium 30g livré chaque mois. Annulable à tout moment.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-green-800">33,90 €<span class="text-sm text-gray-500">/mois</span></span>
+                            <button class="snipcart-add-item bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800 transition"
+                                data-item-id="abonnement-shilajit-30g"
+                                data-item-name="Abonnement Shilajit 30g"
+                                data-item-price="33.90"
+                                data-item-description="Shilajit Premium 30g livré chaque mois. Annulable à tout moment."
+                                data-item-image="https://images.unsplash.com/photo-1587854692152-cbe660dbde88"
+                                data-item-url="https://mountainresine.netlify.app/"
+                                data-item-has-taxes-included="true">
+                                S'abonner
+                            </button>
+                        </div>
+                        <div class="mt-4 text-sm text-gray-600">
+                            <p>Plusieurs options de paiement disponibles : carte bancaire, PayPal, Google Pay</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- B2B Option -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden product-card">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shilajit B2B" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-green-800">Offre Professionnelle</h3>
+                            <span class="bg-gray-100 text-gray-800 text-xs font-semibold px-2.5 py-0.5 rounded">B2B</span>
+                        </div>
                         <p class="text-gray-600 mb-4">Solutions personnalisées pour les professionnels. Tarifs de gros avantageux.</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xl font-bold" style="color: var(--primary);">Prix sur devis</span>
-                            <a href="#contact" class="btn-secondary text-sm px-4 py-2">
-                                Demander un devis
-                            </a>
+                            <span class="text-xl font-bold text-green-800">Prix sur devis</span>
+                            <a href="#contact" class="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition">Demander un devis</a>
                         </div>
                     </div>
                 </div>
@@ -489,333 +357,200 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title text-3xl md:text-4xl mx-auto">Ce que disent nos clients</h2>
-                <p class="mt-6 text-gray-600 max-w-3xl mx-auto">Découvrez les expériences de ceux qui ont intégré le Shilajit dans leur quotidien</p>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">Ce que disent nos clients</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Découvrez les expériences de ceux qui ont intégré le Shilajit dans leur quotidien</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-sm testimonial-card">
-                    <div class="flex items-center mb-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Thomas D." class="w-16 h-16 rounded-full mr-4">
                         <div>
-                            <h4 class="font-bold text-lg">Thomas D.</h4>
+                            <h3 class="text-lg font-bold text-green-800">Thomas D.</h3>
                             <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic">"J'utilise le Shilajit depuis 3 mois maintenant et la différence est incroyable. Mon niveau d'énergie est constant toute la journée, ma récupération après le sport est bien meilleure. Un produit que je recommande à 100% !"</p>
+                    <p class="text-gray-600">"J'utilise le Shilajit depuis 3 mois maintenant et la différence est incroyable. Mon niveau d'énergie est constant toute la journée, ma récupération après le sport est bien meilleure. Un produit que je recommande à 100% !"</p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-lg shadow-sm testimonial-card">
-                    <div class="flex items-center mb-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
                         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie M." class="w-16 h-16 rounded-full mr-4">
                         <div>
-                            <h4 class="font-bold text-lg">Sophie M.</h4>
-                            <div class="text-sm text-gray-600">Naturopathe</div>
+                            <h3 class="text-lg font-bold text-green-800">Sophie M.</h3>
                             <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic">"En tant que naturopathe, je prescris souvent du Shilajit à mes clients. Celui de MountainResine est de loin le plus pur et le plus efficace que j'ai pu tester. Mes clients reviennent toujours avec des retours positifs."</p>
+                    <p class="text-gray-600">"En tant que naturopathe, je prescris souvent du Shilajit à mes clients. Celui de MountainResine est de loin le plus pur et le plus efficace que j'ai pu tester. Mes clients reviennent toujours avec des retours positifs."</p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-lg shadow-sm testimonial-card">
-                    <div class="flex items-center mb-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
                         <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Jean-Philippe R." class="w-16 h-16 rounded-full mr-4">
                         <div>
-                            <h4 class="font-bold text-lg">Jean-Philippe R.</h4>
+                            <h3 class="text-lg font-bold text-green-800">Jean-Philippe R.</h3>
                             <div class="flex text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                </svg>
                             </div>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic">"À 58 ans, je cherchais un complément naturel pour retrouver de la vitalité. Le Shilajit a dépassé mes attentes. Ma concentration s'est améliorée et j'ai retrouvé une énergie que je n'avais plus depuis longtemps. Service client au top également !"</p>
+                    <p class="text-gray-600">"À 58 ans, je cherchais un complément naturel pour retrouver de la vitalité. Le Shilajit a dépassé mes attentes. Ma concentration s'est améliorée et j'ai retrouvé une énergie que je n'avais plus depuis longtemps. Service client au top également !"</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- B2B Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <h2 class="section-title text-3xl md:text-4xl">Solutions pour professionnels</h2>
-                    <p class="mt-6 text-gray-600 mb-8">Des offres adaptées aux besoins des praticiens, revendeurs et entreprises</p>
-                    
-                    <h3 class="text-xl font-bold mb-6" style="color: var(--primary);">Pourquoi choisir MountainResine pour votre activité</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="flex">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center w-12 h-12 rounded-md bg-green-100" style="color: var(--primary);">
-                                    <i class="fas fa-percentage"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold mb-2">Tarifs de gros compétitifs</h4>
-                                <p class="text-gray-600">Bénéficiez de réductions progressives selon le volume commandé, pour optimiser vos marges.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center w-12 h-12 rounded-md bg-green-100" style="color: var(--primary);">
-                                    <i class="fas fa-tag"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold mb-2">Marque blanche disponible</h4>
-                                <p class="text-gray-600">Possibilité de commercialiser sous votre propre marque avec un étiquetage personnalisé.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center w-12 h-12 rounded-md bg-green-100" style="color: var(--primary);">
-                                    <i class="fas fa-bullhorn"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold mb-2">Support marketing</h4>
-                                <p class="text-gray-600">Documentation scientifique, fiches produits et supports visuels pour vos clients.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center w-12 h-12 rounded-md bg-green-100" style="color: var(--primary);">
-                                    <i class="fas fa-certificate"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold mb-2">Qualité certifiée</h4>
-                                <p class="text-gray-600">Analyses complètes et certificats de qualité pour chaque lot. Traçabilité garantie.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="md:w-1/2 md:pl-12 md:border-l border-gray-200">
-                    <h3 class="text-xl font-bold mb-6" style="color: var(--primary);">Demande de devis B2B</h3>
-                    <form class="space-y-6">
-                        <div>
-                            <label class="block text-gray-700 mb-2" for="name">Nom complet *</label>
-                            <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-gray-700 mb-2" for="company">Entreprise *</label>
-                            <input type="text" id="company" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-gray-700 mb-2" for="email">Email professionnel *</label>
-                            <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-gray-700 mb-2" for="phone">Téléphone</label>
-                            <input type="tel" id="phone" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-gray-700 mb-2" for="volume">Volume estimé (kg/mois)</label>
-                            <select id="volume" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
-                                <option value="">Sélectionnez une option</option>
-                                <option value="small">Moins de 1 kg</option>
-                                <option value="medium">1 à 5 kg</option>
-                                <option value="large">5 à 20 kg</option>
-                                <option value="xlarge">Plus de 20 kg</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-gray-700 mb-2" for="message">Message</label>
-                            <textarea id="message" rows="4" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-                        </div>
-                        
-                        <div>
-                            <button type="submit" class="btn-primary w-full flex items-center justify-center">
-                                <span>Envoyer ma demande</span>
-                                <i class="fas fa-paper-plane ml-2"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title text-3xl md:text-4xl mx-auto">Notre blog</h2>
-                <p class="mt-6 text-gray-600 max-w-3xl mx-auto">Découvrez nos articles sur le Shilajit, ses bienfaits et utilisations</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg overflow-hidden shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Les bienfaits du Shilajit" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="text-sm text-gray-500 mb-2">15 mai 2023 | 5 min de lecture</div>
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary);">Les 7 bienfaits prouvés du Shilajit pour votre santé</h3>
-                        <p class="text-gray-600 mb-4">Découvrez les effets positifs scientifiquement documentés du Shilajit sur l'organisme et pourquoi cette résine est si prisée...</p>
-                        <a href="#" class="inline-flex items-center font-semibold" style="color: var(--primary);">
-                            Lire la suite
-                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg overflow-hidden shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Comment utiliser le Shilajit" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="text-sm text-gray-500 mb-2">2 juin 2023 | 7 min de lecture</div>
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary);">Guide complet : Comment utiliser le Shilajit correctement</h3>
-                        <p class="text-gray-600 mb-4">Apprenez à doser et consommer le Shilajit pour maximiser ses effets. Les erreurs à éviter et les meilleures pratiques...</p>
-                        <a href="#" class="inline-flex items-center font-semibold" style="color: var(--primary);">
-                            Lire la suite
-                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="bg-white rounded-lg overflow-hidden shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Shilajit et alimentation" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="text-sm text-gray-500 mb-2">20 juin 2023 | 6 min de lecture</div>
-                        <h3 class="text-xl font-bold mb-3" style="color: var(--primary);">Shilajit et alimentation : les combinaisons gagnantes</h3>
-                        <p class="text-gray-600 mb-4">Des conseils pour intégrer efficacement le Shilajit dans votre alimentation quotidienne et les aliments qui potentialisent ses effets...</p>
-                        <a href="#" class="inline-flex items-center font-semibold" style="color: var(--primary);">
-                            Lire la suite
-                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#" class="btn-secondary inline-flex items-center">
-                    <span>Voir tous les articles</span>
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="py-16 bg-white">
+    <section id="faq" class="py-16">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title text-3xl md:text-4xl mx-auto">Questions fréquentes</h2>
-                <p class="mt-6 text-gray-600 max-w-3xl mx-auto">Tout ce que vous devez savoir sur le Shilajit et nos produits</p>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">Questions fréquentes</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Tout ce que vous devez savoir sur le Shilajit et nos produits</p>
             </div>
             
-            <div class="max-w-3xl mx-auto">
-                <div class="space-y-6">
-                    <div class="faq-item p-5 bg-gray-50 rounded-lg active">
-                        <div class="faq-question flex justify-between items-center cursor-pointer">
-                            <h3 class="text-lg font-semibold" style="color: var(--primary);">Qu'est-ce que le Shilajit exactement ?</h3>
-                            <span class="text-gray-500"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="faq-answer mt-4 text-gray-600">
-                            <p>Le Shilajit est une substance résineuse qui suinte des roches des montagnes, principalement de l'Himalaya, pendant les mois chauds. Il se forme sur des millions d'années à partir de la décomposition de matières végétales et contient plus de 84 minéraux sous leur forme ionique, ainsi que des acides fulviques et humiques, des antioxydants et des composés anti-inflammatoires. Il est utilisé depuis des millénaires dans la médecine ayurvédique comme "rasayana" (régénérateur).</p>
-                        </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="mb-6 border-b border-gray-200 pb-6 faq-item active">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-semibold text-green-800">Qu'est-ce que le Shilajit exactement ?</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-800 transform rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer pt-4">
+                        <p class="text-gray-600">Le Shilajit est une substance résineuse qui suinte des roches des montagnes, principalement de l'Himalaya, pendant les mois chauds. Il se forme sur des millions d'années à partir de la décomposition de matières végétales et contient plus de 84 minéraux sous leur forme ionique, ainsi que des acides fulviques et humiques, des antioxydants et des composés anti-inflammatoires. Il est utilisé depuis des millénaires dans la médecine ayurvédique comme "rasayana" (régénérateur).</p>
                     </div>
-                    
-                    <div class="faq-item p-5 bg-gray-50 rounded-lg">
-                        <div class="faq-question flex justify-between items-center cursor-pointer">
-                            <h3 class="text-lg font-semibold" style="color: var(--primary);">Comment consommer le Shilajit ?</h3>
-                            <span class="text-gray-500"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="faq-answer mt-4 text-gray-600">
-                            <p>Pour consommer le Shilajit, prenez une portion de la taille d'un grain de riz (environ 100-200mg) et dissolvez-la dans de l'eau tiède, du thé ou du lait chaud. Il est recommandé de le prendre à jeun le matin ou avant un repas pour une meilleure absorption. La dose peut être augmentée progressivement selon vos besoins, mais il est toujours conseillé de commencer par de petites quantités.</p>
-                        </div>
+                </div>
+                
+                <div class="mb-6 border-b border-gray-200 pb-6 faq-item">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-semibold text-green-800">Comment consommer le Shilajit ?</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer pt-4">
+                        <p class="text-gray-600">Pour consommer le Shilajit, prenez une portion de la taille d'un grain de riz (environ 100-200mg) et dissolvez-la dans de l'eau tiède, du thé ou du lait chaud. Il est recommandé de le prendre à jeun le matin ou avant un repas pour une meilleure absorption. La dose peut être augmentée progressivement selon vos besoins, mais il est toujours conseillé de commencer par de petites quantités.</p>
                     </div>
-                    
-                    <div class="faq-item p-5 bg-gray-50 rounded-lg">
-                        <div class="faq-question flex justify-between items-center cursor-pointer">
-                            <h3 class="text-lg font-semibold" style="color: var(--primary);">Comment reconnaître un Shilajit authentique ?</h3>
-                            <span class="text-gray-500"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="faq-answer mt-4 text-gray-600">
-                            <p>Notre Shilajit est 100% pur et authentique, récolté directement dans les montagnes de l'Himalaya. Vous pouvez reconnaître un Shilajit authentique à sa couleur brun foncé à noir, sa texture résineuse, son odeur caractéristique et sa capacité à se dissoudre complètement dans l'eau chaude. Nous fournissons des analyses de laboratoire pour chaque lot, garantissant sa pureté et sa teneur en acides fulviques. Méfiez-vous des produits en poudre ou en gélules qui sont souvent dilués ou transformés.</p>
-                        </div>
+                </div>
+                
+                <div class="mb-6 border-b border-gray-200 pb-6 faq-item">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-semibold text-green-800">Comment reconnaître un Shilajit authentique ?</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer pt-4">
+                        <p class="text-gray-600">Notre Shilajit est 100% pur et authentique, récolté directement dans les montagnes de l'Himalaya. Vous pouvez reconnaître un Shilajit authentique à sa couleur brun foncé à noir, sa texture résineuse, son odeur caractéristique et sa capacité à se dissoudre complètement dans l'eau chaude. Nous fournissons des analyses de laboratoire pour chaque lot, garantissant sa pureté et sa teneur en acides fulviques. Méfiez-vous des produits en poudre ou en gélules qui sont souvent dilués ou transformés.</p>
                     </div>
-                    
-                    <div class="faq-item p-5 bg-gray-50 rounded-lg">
-                        <div class="faq-question flex justify-between items-center cursor-pointer">
-                            <h3 class="text-lg font-semibold" style="color: var(--primary);">Quels sont les bienfaits du Shilajit ?</h3>
-                            <span class="text-gray-500"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="faq-answer mt-4 text-gray-600">
-                            <p>Le Shilajit offre de nombreux bienfaits potentiels, notamment : augmentation de l'énergie et réduction de la fatigue, amélioration des fonctions cognitives, renforcement du système immunitaire, soutien de la santé cardiaque, amélioration de la récupération musculaire, équilibre hormonal, propriétés anti-âge et antioxydantes, et amélioration de l'absorption des nutriments grâce aux acides fulviques. Ces bienfaits sont soutenus par des siècles d'utilisation traditionnelle et de plus en plus d'études scientifiques modernes.</p>
-                        </div>
+                </div>
+                
+                <div class="mb-6 border-b border-gray-200 pb-6 faq-item">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-semibold text-green-800">Quels sont les bienfaits du Shilajit ?</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer pt-4">
+                        <p class="text-gray-600">Le Shilajit offre de nombreux bienfaits potentiels, notamment : augmentation de l'énergie et réduction de la fatigue, amélioration des fonctions cognitives, renforcement du système immunitaire, soutien de la santé cardiaque, amélioration de la récupération musculaire, équilibre hormonal, propriétés anti-âge et antioxydantes, et amélioration de l'absorption des nutriments grâce aux acides fulviques. Ces bienfaits sont soutenus par des siècles d'utilisation traditionnelle et de plus en plus d'études scientifiques modernes.</p>
                     </div>
-                    
-                    <div class="faq-item p-5 bg-gray-50 rounded-lg">
-                        <div class="faq-question flex justify-between items-center cursor-pointer">
-                            <h3 class="text-lg font-semibold" style="color: var(--primary);">Y a-t-il des effets secondaires ?</h3>
-                            <span class="text-gray-500"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="faq-answer mt-4 text-gray-600">
-                            <p>Le Shilajit pur est généralement bien toléré lorsqu'il est consommé aux doses recommandées. Les effets secondaires sont rares, mais peuvent inclure des troubles digestifs légers chez certaines personnes. Il est déconseillé aux femmes enceintes ou allaitantes, aux personnes souffrant d'hémochromatose (excès de fer), et doit être utilisé avec précaution par les personnes sous anticoagulants ou ayant des problèmes rénaux. Consultez toujours votre médecin avant de commencer tout complément, surtout si vous avez des conditions médicales préexistantes ou prenez des médicaments.</p>
-                        </div>
+                </div>
+                
+                <div class="mb-6 border-b border-gray-200 pb-6 faq-item">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-semibold text-green-800">Y a-t-il des effets secondaires ?</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer pt-4">
+                        <p class="text-gray-600">Le Shilajit pur est généralement bien toléré lorsqu'il est consommé aux doses recommandées. Les effets secondaires sont rares, mais peuvent inclure des troubles digestifs légers chez certaines personnes. Il est déconseillé aux femmes enceintes ou allaitantes, aux personnes souffrant d'hémochromatose (excès de fer), et doit être utilisé avec précaution par les personnes sous anticoagulants ou ayant des problèmes rénaux. Consultez toujours votre médecin avant de commencer tout complément, surtout si vous avez des conditions médicales préexistantes ou prenez des médicaments.</p>
                     </div>
-                    
-                    <div class="faq-item p-5 bg-gray-50 rounded-lg">
-                        <div class="faq-question flex justify-between items-center cursor-pointer">
-                            <h3 class="text-lg font-semibold" style="color: var(--primary);">Quelle est la durée de conservation du Shilajit ?</h3>
-                            <span class="text-gray-500"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="faq-answer mt-4 text-gray-600">
-                            <p>Notre Shilajit a une durée de conservation de 3 ans lorsqu'il est conservé correctement. Pour préserver sa qualité, gardez-le dans son contenant d'origine, fermé hermétiquement, à l'abri de la lumière directe du soleil et de l'humidité, à température ambiante. Il n'est pas nécessaire de le réfrigérer.</p>
-                        </div>
+                </div>
+                
+                <div class="mb-6 border-b border-gray-200 pb-6 faq-item">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-semibold text-green-800">Quelle est la durée de conservation et comment le conserver ?</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer pt-4">
+                        <p class="text-gray-600">Notre Shilajit a une durée de conservation de 3 ans lorsqu'il est conservé correctement. Pour préserver sa qualité, gardez-le dans son contenant d'origine, fermé hermétiquement, à l'abri de la lumière directe du soleil et de l'humidité, à température ambiante. Il n'est pas nécessaire de le réfrigérer.</p>
                     </div>
-                    
-                    <div class="faq-item p-5 bg-gray-50 rounded-lg">
-                        <div class="faq-question flex justify-between items-center cursor-pointer">
-                            <h3 class="text-lg font-semibold" style="color: var(--primary);">Comment se déroulent les livraisons ?</h3>
-                            <span class="text-gray-500"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="faq-answer mt-4 text-gray-600">
-                            <p>Nous expédions toutes les commandes sous 24-48h ouvrées. Les délais de livraison sont de 2-3 jours ouvrés pour la France métropolitaine, 3-5 jours pour l'Europe. La livraison est offerte à partir de 49€ d'achat en France et 79€ pour l'Europe. Pour les montants inférieurs, les frais de port sont de 4,90€ pour la France et 9,90€ pour l'Europe. Toutes les commandes sont envoyées avec un numéro de suivi.</p>
-                        </div>
+                </div>
+                
+                <div class="mb-6 border-b border-gray-200 pb-6 faq-item">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-semibold text-green-800">Quels sont les délais et frais de livraison ?</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer pt-4">
+                        <p class="text-gray-600">Nous expédions toutes les commandes sous 24-48h ouvrées. Les délais de livraison sont de 2-3 jours ouvrés pour la France métropolitaine, 3-5 jours pour l'Europe. La livraison est offerte à partir de 49€ d'achat en France et 79€ pour l'Europe. Pour les montants inférieurs, les frais de port sont de 4,90€ pour la France et 9,90€ pour l'Europe. Toutes les commandes sont envoyées avec un numéro de suivi.</p>
                     </div>
-                    
-                    <div class="faq-item p-5 bg-gray-50 rounded-lg">
-                        <div class="faq-question flex justify-between items-center cursor-pointer">
-                            <h3 class="text-lg font-semibold" style="color: var(--primary);">Comment contacter le service client ?</h3>
-                            <span class="text-gray-500"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="faq-answer mt-4 text-gray-600">
-                            <p>Notre service client est disponible du lundi au vendredi de 9h à 18h. Vous pouvez nous contacter par email à contact@mountainresine.com ou via le formulaire de contact de notre site. Nous nous engageons à répondre à toutes les demandes sous 24h ouvrées. Pour les questions urgentes, vous pouvez également utiliser le chat en direct disponible sur notre site aux heures d'ouverture.</p>
-                        </div>
+                </div>
+                
+                <div class="mb-6 pb-6 faq-item">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-semibold text-green-800">Comment contacter le service client ?</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer pt-4">
+                        <p class="text-gray-600">Notre service client est disponible du lundi au vendredi de 9h à 18h. Vous pouvez nous contacter par email à contact@mountainresine.com ou via le formulaire de contact de notre site. Nous nous engageons à répondre à toutes les demandes sous 24h ouvrées. Pour les questions urgentes, vous pouvez également utiliser le chat en direct disponible sur notre site aux heures d'ouverture.</p>
                     </div>
                 </div>
             </div>
@@ -823,124 +558,104 @@
     </section>
 
     <!-- Newsletter Section -->
-    <section class="py-16 bg-gray-800 text-white">
+    <section class="py-16 bg-green-800 text-white">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Restez informé</h2>
-                <p class="text-gray-300 mb-8">Inscrivez-vous à notre newsletter pour recevoir des conseils, des offres exclusives et les dernières actualités sur le Shilajit</p>
+                <h2 class="text-3xl font-bold mb-4">Restez informé</h2>
+                <p class="text-lg mb-8">Inscrivez-vous à notre newsletter pour recevoir des conseils, des offres exclusives et les dernières actualités sur le Shilajit</p>
                 
-                <form class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-                    <input type="email" placeholder="Votre adresse email" class="flex-grow p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-800">
-                    <button type="submit" class="btn-secondary">
-                        <span>S'inscrire</span>
-                        <i class="fas fa-envelope ml-2"></i>
-                    </button>
+                <form class="flex flex-col md:flex-row gap-4">
+                    <input type="email" placeholder="Votre adresse email" class="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none" required>
+                    <button type="submit" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-medium transition">S'inscrire</button>
                 </form>
                 
-                <p class="text-gray-400 text-sm mt-4">En vous inscrivant, vous acceptez de recevoir nos emails et confirmez avoir lu notre politique de confidentialité.</p>
+                <p class="text-sm mt-4 text-green-200">En vous inscrivant, vous acceptez de recevoir nos emails et confirmez avoir lu notre politique de confidentialité.</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-50">
+    <section id="contact" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="section-title text-3xl md:text-4xl mx-auto">Contactez-nous</h2>
-                <p class="mt-6 text-gray-600 max-w-3xl mx-auto">Une question, une demande spécifique ou un problème ? Notre équipe est là pour vous aider</p>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">Contactez-nous</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Une question, une demande spécifique ou un problème ? Notre équipe est là pour vous aider</p>
             </div>
             
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/3 mb-8 md:mb-0">
-                    <h3 class="text-xl font-bold mb-6" style="color: var(--primary);">Nos coordonnées</h3>
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div>
+                    <h3 class="text-2xl font-bold text-green-800 mb-6">Nos coordonnées</h3>
                     
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center w-12 h-12 rounded-md bg-green-100" style="color: var(--primary);">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold mb-1">Email</h4>
-                                <p class="text-gray-600">contact@mountainresine.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center w-12 h-12 rounded-md bg-green-100" style="color: var(--primary);">
-                                    <i class="fas fa-phone-alt"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold mb-1">Téléphone</h4>
-                                <p class="text-gray-600">+33 (0)1 23 45 67 89</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center w-12 h-12 rounded-md bg-green-100" style="color: var(--primary);">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold mb-1">Horaires</h4>
-                                <p class="text-gray-600">Lundi - Vendredi : 9h - 18h</p>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="text-lg font-semibold mb-2">Suivez-nous</h4>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-gray-600 hover:text-primary transition duration-300">
-                                    <i class="fab fa-facebook-f text-xl"></i>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-primary transition duration-300">
-                                    <i class="fab fa-instagram text-xl"></i>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-primary transition duration-300">
-                                    <i class="fab fa-twitter text-xl"></i>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-primary transition duration-300">
-                                    <i class="fab fa-linkedin-in text-xl"></i>
-                                </a>
-                            </div>
+                    <div class="mb-8">
+                        <h4 class="text-lg font-semibold text-green-800 mb-2">Email</h4>
+                        <p class="text-gray-600 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            contact@mountainresine.com
+                        </p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-lg font-semibold text-green-800 mb-2">Téléphone</h4>
+                        <p class="text-gray-600 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            +33 (0)1 23 45 67 89
+                        </p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-lg font-semibold text-green-800 mb-2">Horaires</h4>
+                        <p class="text-gray-600 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Lundi - Vendredi : 9h - 18h
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold text-green-800 mb-2">Suivez-nous</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-green-700 hover:text-green-900">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-green-700 hover:text-green-900">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="md:w-2/3 md:pl-12">
-                    <form class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-gray-700 mb-2" for="contact-name">Nom *</label>
-                                <input type="text" id="contact-name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-gray-700 mb-2" for="contact-email">Email *</label>
-                                <input type="email" id="contact-email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
-                            </div>
+                <div>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nom</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" required>
                         </div>
                         
-                        <div>
-                            <label class="block text-gray-700 mb-2" for="contact-subject">Sujet *</label>
-                            <input type="text" id="contact-subject" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" required>
                         </div>
                         
-                        <div>
-                            <label class="block text-gray-700 mb-2" for="contact-message">Message *</label>
-                            <textarea id="contact-message" rows="5" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary" required></textarea>
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Sujet</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" required>
                         </div>
                         
-                        <div>
-                            <button type="submit" class="btn-primary">
-                                <span>Envoyer le message</span>
-                                <i class="fas fa-paper-plane ml-2"></i>
-                            </button>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" required></textarea>
                         </div>
+                        
+                        <button type="submit" class="bg-green-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-800 transition w-full">Envoyer le message</button>
                     </form>
                 </div>
             </div>
@@ -948,188 +663,139 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <footer class="bg-gray-800 text-white pt-12 pb-8">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8 mb-16">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
-                    <a href="#" class="text-2xl font-bold flex items-center mb-6">
-                        <span class="text-3xl mr-2 text-white">
-                            <i class="fas fa-mountain"></i>
-                        </span>
-                        <span class="text-white">Mountain<span class="text-yellow-400">Resine</span></span>
-                    </a>
-                    <p class="text-gray-400 mb-6">Shilajit premium 100% naturel et authentique, directement depuis l'Himalaya jusqu'à votre porte.</p>
-                    <div>
-                        <h4 class="font-semibold mb-4">Moyens de paiement acceptés</h4>
-                        <div class="flex flex-wrap">
-                            <img src="https://cdn.jsdelivr.net/gh/hfg-gmuend/openmoji@13.1.0/color/svg/1F4B3.svg" alt="Carte de crédit" class="payment-badge">
-                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/paypal.svg" alt="PayPal" class="payment-badge">
-                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/googlepay.svg" alt="Google Pay" class="payment-badge">
-                            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@develop/icons/applepay.svg" alt="Apple Pay" class="payment-badge">
+                    <h3 class="text-xl font-bold mb-4">MountainResine</h3>
+                    <p class="text-gray-400 mb-4">La meilleure source de shilajit pur et authentique, directement des montagnes de l'Himalaya à votre porte.</p>
+                    <div class="payment-methods mt-6">
+                        <p class="text-gray-400 mb-2">Nous acceptons :</p>
+                        <div class="payment-icons flex flex-wrap">
+                            <img src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png" alt="PayPal" class="h-8 mr-2 mb-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/512px-Google_Pay_Logo.svg.png" alt="Google Pay" class="h-8 mr-2 mb-2">
+                            <img src="https://cdn.pixabay.com/photo/2021/12/06/13/48/visa-6850402_1280.png" alt="Visa" class="h-8 mr-2 mb-2">
+                            <img src="https://cdn.pixabay.com/photo/2015/05/26/09/37/master-card-784410_1280.png" alt="MasterCard" class="h-8 mr-2 mb-2">
                         </div>
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="text-xl font-semibold mb-6">Liens rapides</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Accueil</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white transition duration-300">Nos produits</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">À propos du Shilajit</a></li>
-                        <li><a href="#benefits" class="text-gray-400 hover:text-white transition duration-300">Bienfaits</a></li>
-                        <li><a href="#blog" class="text-gray-400 hover:text-white transition duration-300">Blog</a></li>
-                        <li><a href="#faq" class="text-gray-400 hover:text-white transition duration-300">FAQ</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    <h3 class="text-xl font-bold mb-4">Liens rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition">Produits</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">À propos</a></li>
+                        <li><a href="#benefits" class="text-gray-400 hover:text-white transition">Bienfaits</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-xl font-semibold mb-6">Informations légales</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Conditions générales de vente</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Politique de confidentialité</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Politique de livraison</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Politique de retour</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Mentions légales</a></li>
+                    <h3 class="text-xl font-bold mb-4">Informations légales</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Mentions légales</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Conditions générales de vente</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Politique de confidentialité</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Politique de cookies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Livraison et retours</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="text-xl font-semibold mb-6">Newsletter</h4>
-                    <p class="text-gray-400 mb-4">Rejoignez notre communauté et recevez des conseils et offres exclusives.</p>
-                    <form class="space-y-4">
-                        <input type="email" placeholder="Votre email" class="w-full p-3 bg-gray-800 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 text-white">
-                        <button type="submit" class="btn-secondary w-full">S'inscrire</button>
-                    </form>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            contact@mountainresine.com
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            +33 (0)1 23 45 67 89
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Lun-Ven: 9h-18h
+                        </li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2023 MountainResine. Tous droits réservés.</p>
-                    <div class="flex space-x-6">
-                        <a href="#" class="text-gray-500 hover:text-white transition duration-300">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-gray-500 hover:text-white transition duration-300">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-gray-500 hover:text-white transition duration-300">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-500 hover:text-white transition duration-300">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-center text-gray-400">&copy; 2023 MountainResine. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Snipcart Integration -->
-    <div hidden id="snipcart" data-api-key="M2ZiZDdmMDItZjBkNC00NGFjLTlhZDMtZjZhNDE0Y2ZlZGRmNjM4Nzk2Mjg4NjcyNzY0MjQw" data-payment-request-enabled="true"></div>
-    <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
+    <!-- Snipcart Configuration -->
+    <div id="snipcart" 
+         data-api-key="M2ZiZDdmMDItZjBkNC00NGFjLTlhZDMtZjZhNDE0Y2ZlZGRmNjM4Nzk2Mjg4NjcyNzY0MjQw" 
+         data-config-modal-style="side" 
+         data-payment-request-enabled="true"
+         hidden></div>
+    <link rel="preconnect" href="https://app.snipcart.com">
+    <link rel="preconnect" href="https://cdn.snipcart.com">
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
+    <script src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
 
-    <!-- JavaScript for Interactions -->
+    <!-- Debug Script for Snipcart -->
     <script>
-        // FAQ Toggle
-        document.addEventListener('DOMContentLoaded', function() {
+        // Snipcart event listeners for debugging
+        document.addEventListener('snipcart.ready', function() {
+            console.log('Snipcart is ready');
+            
+            // Set French language
+            Snipcart.api.session.setLanguage('fr');
+            
+            // Log payment methods
+            Snipcart.store.subscribe(function(state) {
+                if (state.paymentMethods) {
+                    console.log('Available payment methods:', state.paymentMethods);
+                }
+            });
+            
+            // Listen for cart errors
+            document.addEventListener('snipcart.cart.error', function(event) {
+                console.error('Snipcart error:', event.detail);
+            });
+            
+            // Listen for checkout errors
+            document.addEventListener('snipcart.checkout.error', function(event) {
+                console.error('Checkout error:', event.detail);
+            });
+            
+            // Listen for payment errors
+            document.addEventListener('snipcart.payment.error', function(event) {
+                console.error('Payment error:', event.detail);
+            });
+        });
+        
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
             const faqItems = document.querySelectorAll('.faq-item');
             
+            // Close all other FAQ items
             faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                const answer = item.querySelector('.faq-answer');
-                const icon = question.querySelector('i');
-                
-                // Initialize first item as active
-                if (item.classList.contains('active')) {
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                    icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
-                }
-                
-                question.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    
-                    // Close all items
-                    faqItems.forEach(otherItem => {
-                        otherItem.classList.remove('active');
-                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
-                        otherItem.querySelector('i').classList.replace('fa-chevron-up', 'fa-chevron-down');
-                    });
-                    
-                    // Open clicked item if it was not active
-                    if (!isActive) {
-                        item.classList.add('active');
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
-                        icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
-                    }
-                });
-            });
-        });
-        
-        // Mobile Menu Toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuButton = document.querySelector('.md\\:hidden');
-            const mobileMenu = document.createElement('div');
-            
-            mobileMenu.className = 'mobile-menu fixed inset-0 bg-white z-50 flex flex-col p-4 transform transition-transform duration-300 translate-x-full';
-            mobileMenu.innerHTML = `
-                <div class="flex justify-between items-center mb-8">
-                    <a href="#" class="text-2xl font-bold text-primary flex items-center">
-                        <span class="text-3xl mr-2" style="color: var(--primary);">
-                            <i class="fas fa-mountain"></i>
-                        </span>
-                        <span style="color: var(--primary);">Mountain<span style="color: var(--secondary);">Resine</span></span>
-                    </a>
-                    <button class="close-menu text-gray-700 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-                <nav class="flex flex-col space-y-6 text-lg">
-                    <a href="#products" class="text-gray-700 hover:text-primary transition duration-300">Produits</a>
-                    <a href="#benefits" class="text-gray-700 hover:text-primary transition duration-300">Bienfaits</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary transition duration-300">À propos</a>
-                    <a href="#blog" class="text-gray-700 hover:text-primary transition duration-300">Blog</a>
-                    <a href="#faq" class="text-gray-700 hover:text-primary transition duration-300">FAQ</a>
-                    <a href="#contact" class="text-gray-700 hover:text-primary transition duration-300">Contact</a>
-                </nav>
-            `;
-            
-            document.body.appendChild(mobileMenu);
-            
-            menuButton.addEventListener('click', function() {
-                mobileMenu.classList.remove('translate-x-full');
-            });
-            
-            mobileMenu.querySelector('.close-menu').addEventListener('click', function() {
-                mobileMenu.classList.add('translate-x-full');
-            });
-            
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenu.classList.add('translate-x-full');
-                });
-            });
-        });
-        
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
+                if (item !== faqItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    const icon = item.querySelector('svg');
+                    icon.classList.remove('rotate-180');
                 }
             });
-        });
+            
+            // Toggle current FAQ item
+            faqItem.classList.toggle('active');
+            const icon = element.querySelector('svg');
+            icon.classList.toggle('rotate-180');
+        }
     </script>
 </body>
 </html>
