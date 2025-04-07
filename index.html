@@ -16,7 +16,7 @@
             line-height: 1.6;
         }
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('hero-shilajit.jpg');
             background-size: cover;
             background-position: center;
             height: 80vh;
@@ -40,33 +40,6 @@
             background-color: #2D3748;
             transform: translateY(-2px);
         }
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.25rem;
-            font-weight: bold;
-            color: #2D3748;
-        }
-        .feature-card {
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        .testimonial-card {
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .footer {
-            background-color: #2D3748;
-            color: white;
-            padding: 3rem 0;
-        }
         .product-card {
             border-radius: 0.5rem;
             overflow: hidden;
@@ -77,45 +50,48 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
-        .faq-item {
-            margin-bottom: 1.5rem;
-        }
-        .faq-question {
-            font-weight: bold;
-            cursor: pointer;
-            padding: 1rem;
-            background-color: #EDF2F7;
-            border-radius: 0.375rem;
-        }
-        .faq-answer {
-            padding: 1rem;
-            background-color: #F7FAFC;
-            border-radius: 0 0 0.375rem 0.375rem;
-        }
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-800">MountainResine</a>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="text-gray-600 hover:text-gray-900">À propos</a>
-                <a href="#products" class="text-gray-600 hover:text-gray-900">Produits</a>
-                <a href="#benefits" class="text-gray-600 hover:text-gray-900">Bienfaits</a>
-                <a href="#b2b" class="text-gray-600 hover:text-gray-900">Professionnels</a>
-                <a href="#blog" class="text-gray-600 hover:text-gray-900">Blog</a>
-                <a href="#faq" class="text-gray-600 hover:text-gray-900">FAQ</a>
-                <a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a>
-                <button class="snipcart-checkout flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                    </svg>
-                    <span class="snipcart-items-count">0</span>
-                </button>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container mx-auto px-6">
+            <h1 class="text-5xl font-bold mb-4">Découvrez l'or noir de l'Himalaya</h1>
+            <p class="text-xl mb-8">Shilajit 100% pur et naturel - La résine fossile aux bienfaits millénaires</p>
+            <a href="#products" class="btn-primary">Découvrir notre produit</a>
+        </div>
+    </section>
+
+    <!-- Product Section Unique -->
+    <section class="py-16 bg-white" id="products">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Notre produit</h2>
+            <div class="max-w-xl mx-auto">
+                <div class="product-card bg-white">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88" alt="Shilajit Premium 30g" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold">Shilajit Premium 30g</h3>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">Bestseller</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">Résine pure d'Himalaya, récoltée à la main et purifiée traditionnellement.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold">39,90€</span>
+                            <button class="btn-primary snipcart-add-item"
+                                data-item-id="shilajit-premium-30g"
+                                data-item-name="Shilajit Premium 30g"
+                                data-item-price="39.90"
+                                data-item-description="Résine pure d'Himalaya, récoltée à la main et purifiée traditionnellement."
+                                data-item-image="https://images.unsplash.com/photo-1587854692152-cbe660dbde88"
+                                data-item-url="https://mountainresine.netlify.app">
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
+    </section>
 
     <!-- Hero Section -->
     <section class="hero-section" id="home">
